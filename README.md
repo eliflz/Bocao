@@ -1,4 +1,4 @@
-# 🍔 Bocao – Web App para Restaurante
+# 🍽️ Bocao
 
 **Bocao** es una aplicación web moderna para restaurantes que permite a los usuarios **explorar el menú, agregar productos a un carrito y realizar pedidos de forma interactiva**.
 
