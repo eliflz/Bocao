@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bocao</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">BOCAO</a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <button class="cart-btn" onclick="toggleCart()">
+                🛒 Carrito (<span id="cart-count">0</span>)
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="floating-icons">
+            <span class="float-item" style="top: 20%; left: 10%;">🍕</span>
+            <span class="float-item" style="top: 60%; left: 5%; animation-delay: 2s;">🍟</span>
+            <span class="float-item" style="top: 30%; right: 15%; animation-delay: 4s;">🌮</span>
+            <span class="float-item" style="bottom: 20%; right: 10%; animation-delay: 1s;">🍔</span>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>El sabor que <span>te conquista</span></h1>
+                <p>Descubre la mejor comida rápida de la ciudad. Hamburguesas jugosas, papas crujientes y bebidas refrescantes preparadas al momento con ingredientes frescos y de calidad.</p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn-primary">Ver Menú</a>
+                    <a href="#contacto" class="btn-secondary">Contactar</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="nosotros">
+        <div class="features-grid">
+            <div class="feature-item scroll-reveal">
+                <div class="feature-icon">⚡</div>
+                <h3>Rápido</h3>
+                <p>Tu pedido listo en menos de 15 minutos. ¡No esperes más para disfrutar!</p>
+            </div>
+            <div class="feature-item scroll-reveal">
+                <div class="feature-icon">🥩</div>
+                <h3>Calidad</h3>
+                <p>Ingredientes frescos seleccionados diariamente de proveedores locales.</p>
+            </div>
+            <div class="feature-item scroll-reveal">
+                <div class="feature-icon">💰</div>
+                <h3>Económico</h3>
+                <p>Los mejores precios sin sacrificar el sabor ni la calidad.</p>
+            </div>
+            <div class="feature-item scroll-reveal">
+                <div class="feature-icon">🚚</div>
+                <h3>Domicilio</h3>
+                <p>Entrega a domicilio gratuita en pedidos superiores a $15.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="section-header scroll-reveal">
+            <h2>Nuestro Menú</h2>
+            <p>Delicias preparadas con pasión para ti</p>
+        </div>
+        
+        <div class="menu-grid">
+            <div class="menu-card scroll-reveal" onclick="addToCart('Hamburguesa Clásica', 8.99)">
+                <div class="menu-card-image" style="background-image: url(img/hamburguesaclasica.png); background-size: cover; background-position: center;"></div>
+                <div class="menu-card-content">
+                    <h3>Hamburguesa Clásica</h3>
+                    <p>Carne de res 100%, queso cheddar, lechuga fresca, tomate y nuestra salsa especial.</p>
+                    <div class="menu-card-footer">
+                        <span class="price">$8.99</span>
+                        <button class="add-to-cart">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card scroll-reveal" onclick="addToCart('Hamburguesa Doble', 12.99)">
+                <div class="menu-card-image" style="background-image: url(img/hamburguesadoble.png); background-size: cover; background-position: center;"></div>
+                <div class="menu-card-content">
+                    <h3>Hamburguesa Doble</h3>
+                    <p>Doble carne, doble queso, tocino crujiente, cebolla caramelizada y salsa BBQ.</p>
+                    <div class="menu-card-footer">
+                        <span class="price">$12.99</span>
+                        <button class="add-to-cart">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card scroll-reveal" onclick="addToCart('Papas Fritas', 3.99)">
+                <div class="menu-card-image" style='background-image: url("img/papasfritas.png"); background-size: cover; background-position: center;'></div>
+                <div class="menu-card-content">
+                    <h3>Papas Fritas</h3>
+                    <p>Papas frescas cortadas a mano, fritas hasta quedar doradas y crujientes.</p>
+                    <div class="menu-card-footer">
+                        <span class="price">$3.99</span>
+                        <button class="add-to-cart">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card scroll-reveal" onclick="addToCart('Papas con Queso', 5.99)">
+                <div class="menu-card-image" style="background-image: url(img/papasconqueso.png); background-size: cover; background-position: center;"></div>
+                <div class="menu-card-content">
+                    <h3>Papas con Queso</h3>
+                    <p>Papas fritas cubiertas con queso cheddar derretido y tocino bits.</p>
+                    <div class="menu-card-footer">
+                        <span class="price">$5.99</span>
+                        <button class="add-to-cart">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card scroll-reveal" onclick="addToCart('Hot Dog Especial', 6.99)">
+                <div class="menu-card-image" style="background-image: url(img/hotdogespecial.png); background-size: cover; background-position: center;"></div>
+                <div class="menu-card-content">
+                    <h3>Hot Dog Especial</h3>
+                    <p>Salchicha premium, cebolla crujiente, relish de pepinillo, mostaza y ketchup.</p>
+                    <div class="menu-card-footer">
+                        <span class="price">$6.99</span>
+                        <button class="add-to-cart">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card scroll-reveal" onclick="addToCart('Refresco Grande', 2.99)">
+                <div class="menu-card-image" style="background-image: url(img/refrescogrande.png); background-size: cover; background-position: center;"></div>
+                <div class="menu-card-content">
+                    <h3>Refresco Grande</h3>
+                    <p>Refrescantes bebidas gaseosas servidas con hielo. ¡Elige tu sabor favorito!</p>
+                    <div class="menu-card-footer">
+                        <span class="price">$2.99</span>
+                        <button class="add-to-cart">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card scroll-reveal" onclick="addToCart('Malteada', 4.99)">
+                <div class="menu-card-image" style="background-image: url(img/malteada.png); background-size: cover; background-position: center;"></div>
+                <div class="menu-card-content">
+                    <h3>Malteada</h3>
+                    <p>Cremosa malteada de vainilla, chocolate o fresa con crema batida.</p>
+                    <div class="menu-card-footer">
+                        <span class="price">$4.99</span>
+                        <button class="add-to-cart">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card scroll-reveal" onclick="addToCart('Alitas BBQ', 9.99)">
+                <div class="menu-card-image" style="background-image: url(img/alitasbbq.png); background-size: cover; background-position: center;"></div>
+                <div class="menu-card-content">
+                    <h3>Alitas BBQ</h3>
+                    <p>6 piezas de alitas de pollo bañadas en salsa BBQ casera, acompañadas de apio.</p>
+                    <div class="menu-card-footer">
+                        <span class="price">$9.99</span>
+                        <button class="add-to-cart">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-header scroll-reveal">
+            <h2>Lo que dicen nuestros clientes</h2>
+            <p>Experiencias reales de amantes de la buena comida</p>
+        </div>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card scroll-reveal">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Las mejores hamburguesas que he probado en años. La carne es jugosa y el pan está perfectamente tostado."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MR</div>
+                    <div class="author-info">
+                        <h4>Eliecer Arias</h4>
+                        <span>Cliente habitual</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card scroll-reveal">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Servicio rápido y amable. Las papas con queso son adictivas y el precio es excelente. Totalmente recomendado."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">CG</div>
+                    <div class="author-info">
+                        <h4>Eliecer Arias</h4>
+                        <span>Primera visita</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card scroll-reveal">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"El delivery llegó caliente y a tiempo. La hamburguesa doble es enorme y deliciosa. Bocao es mi nuevo favorito."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AL</div>
+                    <div class="author-info">
+                        <h4>Eliecer Arias</h4>
+                        <span>Pedido a domicilio</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>BOCAO</h3>
+                <p>Comida rápida con el auténtico sabor casero. Calidad, rapidez y buen precio en cada bocado.</p>
+                <div class="social-links">
+                    <a href="#">📘</a>
+                    <a href="#">📸</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📱</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Horario</h3>
+                <p>Lunes a Jueves: 11:00 - 22:00</p>
+                <p>Viernes a Sábado: 11:00 - 00:00</p>
+                <p>Domingo: 12:00 - 21:00</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>📍 Calle Principal #123, Ciudad</p>
+                <p>📞 (555) 123-4567</p>
+                <p>✉️ hola@bocao.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Enlaces</h3>
+                <p><a href="#">Menú completo</a></p>
+                <p><a href="#">Promociones</a></p>
+                <p><a href="#">Trabaja con nosotros</a></p>
+                <p><a href="#">Política de privacidad</a></p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Bocao Restaurant. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Tu Carrito 🛒</h2>
+                <button class="close-modal" onclick="toggleCart()">✕</button>
+            </div>
+            <div id="cart-items">
+                <p style="text-align: center; color: #999; padding: 2rem;">Tu carrito está vacío</p>
+            </div>
+            <div id="cart-footer" style="display: none;">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="total-price">$0.00</span>
+                </div>
+                <button class="checkout-btn" onclick="checkout()">Realizar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
